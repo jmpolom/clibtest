@@ -28,7 +28,7 @@ bin/maintest: main.c lib/libfoo.so | bin/
 	$(CC) $(CFLAGS) -L$(PWD)/lib -lfoo -o bin/maintest main.c
 
 bin/maintest-rpath: main.c lib/libfoo.so | bin/
-	$(CC) $(CFLAGS) -L$(PWD)/lib -lfoo -Wl,-rpath=$(PWD)/lib -o bin/maintest-rpath main.c
+	$(CC) $(CFLAGS) -L$(PWD)/lib -lfoo -Wl,-rpath $(PWD)/lib -o bin/maintest-rpath main.c
 
 bin/maintest-static: main.c lib/libfoo-static.a | bin/
 	$(CC) $(CFLAGS) -L$(PWD)/lib -lfoo-static -o bin/maintest-static main.c
